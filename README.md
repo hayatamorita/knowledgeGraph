@@ -2,6 +2,9 @@
 
 PDFまたはHTMLから本文を抽出し、概念・エンティティ・関係をグラフ化してWeb UIで確認・編集するMVPです。
 
+<img width="1702" height="1028" alt="image" src="https://github.com/user-attachments/assets/6024a5cb-6151-43b0-a6db-2392dea996d8" />
+
+
 ## セットアップ
 
 ```bash
