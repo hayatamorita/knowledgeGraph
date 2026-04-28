@@ -15,6 +15,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { DocumentChunk } from "@/types/document";
 import type { GraphData, GraphEdge, GraphNode } from "@/types/graph";
 import { GraphSidebar } from "./GraphSidebar";
+import { applyReactFlowForceLayout } from "@/lib/graphLayout";
 
 type Selection =
   | { kind: "node"; value: GraphNode }
@@ -98,9 +99,18 @@ export function GraphViewer({
     setEdges(initialEdges);
   }, [initialEdges, setEdges]);
 
+  function autoLayout() {
+    setNodes((currentNodes) => applyReactFlowForceLayout(currentNodes, edges));
+  }
+
   return (
     <div className="graph-layout">
       <div className="panel graph-pane">
+        <div className="graph-toolbar">
+          <button className="button-primary button-small" onClick={autoLayout}>
+            自動整列
+          </button>
+        </div>
         <ReactFlow
           nodes={nodes}
           edges={edges}

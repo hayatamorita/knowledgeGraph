@@ -210,7 +210,17 @@ a {
 }
 
 .graph-pane {
+  position: relative;
   overflow: hidden;
+}
+
+.graph-toolbar {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
 }
 
 .detail-pane {

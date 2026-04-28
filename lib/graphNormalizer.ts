@@ -2,7 +2,7 @@ import type { DocumentChunk } from "@/types/document";
 import type { ExtractedGraph } from "@/types/extraction";
 import type { GraphData, GraphEdge, GraphNode, GraphNodeType, GraphRelationType } from "@/types/graph";
 import { createId } from "./db";
-import { applyRadialLayout } from "./graphLayout";
+import { applyForceLayout } from "./graphLayout";
 import { graphNodeTypeSchema, graphRelationTypeSchema } from "./validators";
 
 function toChunkIds(indexes: number[], chunks: DocumentChunk[]) {
@@ -49,7 +49,6 @@ export function normalizeGraph(documentId: string, extracted: ExtractedGraph, ch
     });
   }
 
-  const nodes = applyRadialLayout([...nodeByKey.values()]);
   const edges: GraphEdge[] = [];
   const seenEdges = new Set<string>();
 
@@ -81,5 +80,5 @@ export function normalizeGraph(documentId: string, extracted: ExtractedGraph, ch
     });
   }
 
-  return { nodes, edges };
+  return { nodes: applyForceLayout([...nodeByKey.values()], edges), edges };
 }
