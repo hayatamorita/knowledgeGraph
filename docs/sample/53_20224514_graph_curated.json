@@ -1,0 +1,402 @@
+{
+  "document": {
+    "source_file": "docs/sample/53_20224514.pdf",
+    "title": "CAE/ML技術を活用した質量と性能の多機能トレードオフ検討技術の開発",
+    "type": "technical_paper",
+    "language": "ja"
+  },
+  "nodes": [
+    {
+      "id": "n01",
+      "label": "CAE/ML技術",
+      "type": "Technology",
+      "description": "CAEと機械学習を組み合わせ、車両企画段階で性能予測とトレードオフ検討を行う技術。"
+    },
+    {
+      "id": "n02",
+      "label": "車両開発",
+      "type": "Process",
+      "description": "企画、設計、性能評価を含む自動車開発プロセス。"
+    },
+    {
+      "id": "n03",
+      "label": "企画段階",
+      "type": "Phase",
+      "description": "車両の性能、コスト、重量などの成立性を早期に検討する段階。"
+    },
+    {
+      "id": "n04",
+      "label": "多機能トレードオフ検討",
+      "type": "Concept",
+      "description": "質量、剛性、衝突性能、空力、人間工学など複数性能の背反関係を検討すること。"
+    },
+    {
+      "id": "n05",
+      "label": "質量",
+      "type": "PerformanceMetric",
+      "description": "車両の空車重量など、軽量化と性能成立の関係で評価される指標。"
+    },
+    {
+      "id": "n06",
+      "label": "車体性能",
+      "type": "PerformanceMetric",
+      "description": "車体剛性、衝突性能、空力、人間工学などを含む性能群。"
+    },
+    {
+      "id": "n07",
+      "label": "パラメトリックFEモデル",
+      "type": "Model",
+      "description": "設計パラメータを変更することで車体形状を変化させられる有限要素モデル。"
+    },
+    {
+      "id": "n08",
+      "label": "FE計算",
+      "type": "Method",
+      "description": "有限要素モデルを用いた性能評価計算。"
+    },
+    {
+      "id": "n09",
+      "label": "設計パラメータ",
+      "type": "Variable",
+      "description": "ホイールベース、ルーフ高さ、Cピラー位置など、車体形状を変化させる入力条件。"
+    },
+    {
+      "id": "n10",
+      "label": "骨格配置",
+      "type": "DesignElement",
+      "description": "車体構造の骨格部品の配置。"
+    },
+    {
+      "id": "n11",
+      "label": "意匠デザイン",
+      "type": "DesignElement",
+      "description": "外板やガラス周辺形状など、外観意匠に関わる形状要素。"
+    },
+    {
+      "id": "n12",
+      "label": "サンプリング解析",
+      "type": "Method",
+      "description": "設計パラメータの組み合わせを変えて多数のFE計算を実施する解析。"
+    },
+    {
+      "id": "n13",
+      "label": "均等ラテン超方格法",
+      "type": "Method",
+      "description": "最大約400ケースの設計パラメータ組み合わせを準備するために用いられたサンプリング手法。"
+    },
+    {
+      "id": "n14",
+      "label": "解析結果データベース",
+      "type": "DataStore",
+      "description": "設計パラメータの組み合わせとFE計算結果を蓄積したデータベース。"
+    },
+    {
+      "id": "n15",
+      "label": "機械学習モデル",
+      "type": "Model",
+      "description": "解析結果データベースから構築され、設計パラメータに対する性能を予測するモデル。"
+    },
+    {
+      "id": "n16",
+      "label": "RSM",
+      "type": "Method",
+      "description": "Response Surface Method。性能応答を近似するための手法。"
+    },
+    {
+      "id": "n17",
+      "label": "RBF",
+      "type": "Method",
+      "description": "Radial Basis Function。modeFRONTIERで機械学習モデル構築に使用された手法。"
+    },
+    {
+      "id": "n18",
+      "label": "性能Map",
+      "type": "Visualization",
+      "description": "設計パラメータと性能応答値の関係を可視化するマップ。"
+    },
+    {
+      "id": "n19",
+      "label": "性能成立範囲",
+      "type": "Criterion",
+      "description": "複数の目標性能を同時に満足できる設計パラメータ範囲。"
+    },
+    {
+      "id": "n20",
+      "label": "予測精度",
+      "type": "EvaluationMetric",
+      "description": "機械学習モデルの予測結果がFE計算結果をどの程度再現するかを示す指標。"
+    },
+    {
+      "id": "n21",
+      "label": "一点除外交差検定",
+      "type": "EvaluationMethod",
+      "description": "機械学習モデルの予測精度確認に用いられた検証方法。"
+    },
+    {
+      "id": "n22",
+      "label": "車体捩じり剛性",
+      "type": "PerformanceMetric",
+      "description": "車体剛性の評価項目の一つ。"
+    },
+    {
+      "id": "n23",
+      "label": "ルーフ強度",
+      "type": "PerformanceMetric",
+      "description": "衝突性能に関わる評価項目の一つ。"
+    },
+    {
+      "id": "n24",
+      "label": "空車重量",
+      "type": "PerformanceMetric",
+      "description": "質量評価に用いられる車両重量指標。"
+    },
+    {
+      "id": "n25",
+      "label": "Cd値",
+      "type": "PerformanceMetric",
+      "description": "空力性能の評価指標。"
+    },
+    {
+      "id": "n26",
+      "label": "後側方視界性",
+      "type": "PerformanceMetric",
+      "description": "人間工学に関わる視界性能の評価項目。"
+    },
+    {
+      "id": "n27",
+      "label": "ルーフ高さ",
+      "type": "DesignParameter",
+      "description": "車体骨格配置に関わる設計パラメータ。"
+    },
+    {
+      "id": "n28",
+      "label": "ルーフレール間W幅",
+      "type": "DesignParameter",
+      "description": "車体骨格配置に関わる設計パラメータで、質量や剛性、ルーフ強度に影響する。"
+    },
+    {
+      "id": "n29",
+      "label": "Cピラーサイド絞り量",
+      "type": "DesignParameter",
+      "description": "意匠デザインに関わる設計パラメータで、Cd値や後側方視界性に影響する。"
+    },
+    {
+      "id": "n30",
+      "label": "Rrガラス傾斜角",
+      "type": "DesignParameter",
+      "description": "意匠デザインに関わる設計パラメータで、空力と視界性能の検討に使われる。"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "source": "n01",
+      "target": "n04",
+      "relation": "enables",
+      "label": "可能にする"
+    },
+    {
+      "id": "e02",
+      "source": "n04",
+      "target": "n05",
+      "relation": "evaluates",
+      "label": "評価する"
+    },
+    {
+      "id": "e03",
+      "source": "n04",
+      "target": "n06",
+      "relation": "evaluates",
+      "label": "評価する"
+    },
+    {
+      "id": "e04",
+      "source": "n02",
+      "target": "n03",
+      "relation": "has_phase",
+      "label": "段階を含む"
+    },
+    {
+      "id": "e05",
+      "source": "n03",
+      "target": "n04",
+      "relation": "requires",
+      "label": "必要とする"
+    },
+    {
+      "id": "e06",
+      "source": "n07",
+      "target": "n09",
+      "relation": "controlled_by",
+      "label": "制御される"
+    },
+    {
+      "id": "e07",
+      "source": "n09",
+      "target": "n10",
+      "relation": "includes",
+      "label": "含む"
+    },
+    {
+      "id": "e08",
+      "source": "n09",
+      "target": "n11",
+      "relation": "includes",
+      "label": "含む"
+    },
+    {
+      "id": "e09",
+      "source": "n12",
+      "target": "n07",
+      "relation": "uses",
+      "label": "用いる"
+    },
+    {
+      "id": "e10",
+      "source": "n13",
+      "target": "n12",
+      "relation": "generates_cases_for",
+      "label": "ケースを作る"
+    },
+    {
+      "id": "e11",
+      "source": "n12",
+      "target": "n08",
+      "relation": "executes",
+      "label": "実行する"
+    },
+    {
+      "id": "e12",
+      "source": "n08",
+      "target": "n14",
+      "relation": "produces",
+      "label": "生成する"
+    },
+    {
+      "id": "e13",
+      "source": "n14",
+      "target": "n15",
+      "relation": "trains",
+      "label": "学習に使う"
+    },
+    {
+      "id": "e14",
+      "source": "n16",
+      "target": "n15",
+      "relation": "builds",
+      "label": "構築する"
+    },
+    {
+      "id": "e15",
+      "source": "n17",
+      "target": "n15",
+      "relation": "builds",
+      "label": "構築する"
+    },
+    {
+      "id": "e16",
+      "source": "n15",
+      "target": "n18",
+      "relation": "drives",
+      "label": "作成に使う"
+    },
+    {
+      "id": "e17",
+      "source": "n18",
+      "target": "n19",
+      "relation": "visualizes",
+      "label": "可視化する"
+    },
+    {
+      "id": "e18",
+      "source": "n21",
+      "target": "n20",
+      "relation": "validates",
+      "label": "検証する"
+    },
+    {
+      "id": "e19",
+      "source": "n18",
+      "target": "n22",
+      "relation": "shows_response_of",
+      "label": "応答値を示す"
+    },
+    {
+      "id": "e20",
+      "source": "n18",
+      "target": "n23",
+      "relation": "shows_response_of",
+      "label": "応答値を示す"
+    },
+    {
+      "id": "e21",
+      "source": "n18",
+      "target": "n24",
+      "relation": "shows_response_of",
+      "label": "応答値を示す"
+    },
+    {
+      "id": "e22",
+      "source": "n18",
+      "target": "n25",
+      "relation": "shows_response_of",
+      "label": "応答値を示す"
+    },
+    {
+      "id": "e23",
+      "source": "n18",
+      "target": "n26",
+      "relation": "shows_response_of",
+      "label": "応答値を示す"
+    },
+    {
+      "id": "e24",
+      "source": "n27",
+      "target": "n22",
+      "relation": "influences",
+      "label": "影響する"
+    },
+    {
+      "id": "e25",
+      "source": "n28",
+      "target": "n22",
+      "relation": "influences",
+      "label": "影響する"
+    },
+    {
+      "id": "e26",
+      "source": "n28",
+      "target": "n23",
+      "relation": "influences",
+      "label": "影響する"
+    },
+    {
+      "id": "e27",
+      "source": "n29",
+      "target": "n25",
+      "relation": "trade_off_with",
+      "label": "背反関係"
+    },
+    {
+      "id": "e28",
+      "source": "n29",
+      "target": "n26",
+      "relation": "trade_off_with",
+      "label": "背反関係"
+    },
+    {
+      "id": "e29",
+      "source": "n30",
+      "target": "n25",
+      "relation": "influences",
+      "label": "影響する"
+    },
+    {
+      "id": "e30",
+      "source": "n30",
+      "target": "n26",
+      "relation": "influences",
+      "label": "影響する"
+    }
+  ]
+}
